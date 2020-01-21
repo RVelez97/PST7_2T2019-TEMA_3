@@ -1,11 +1,4 @@
-<!-- 
-Creado por Luisetfree & tecnosetfree
-Web: http://luisetfree.over-blog.es
-Facebook:https://www.facebook.com/tecnosetfree/
-Twitter: @tecnosetfree
-Apoyanos con tus visitas y comentarios en nuestras redes sociales para seguir avanzando y traer contenido de calidad.
 
- -->
 
 
 <?php
@@ -25,9 +18,10 @@ exit;
 
 $now = time();
 
+
 if($now > $_SESSION['expire']) {
 session_destroy();
-header('Location: index.html');//redirige a la página de login, modifica la url a tu conveniencia
+header('Location: index.html');//redirige a la página de login
 echo "Tu sesion ha expirado,
 <a href='login.html'>Inicia Sesion</a>";
 exit;
@@ -42,7 +36,7 @@ exit;
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Eliminando el subrayado de los links -->
+<!--eliminacion de los subrayados en los links-->
   <style type="text/css"> 
   a:link 
   { 
@@ -55,30 +49,21 @@ exit;
 
 <div class="jumbotron text-center">
   <h1>Bienvenido <?php echo  $_SESSION['username'];?></h1>
-  <p>Manten tu perfil actualizado</p> 
+ 
   <a href=logout.php><button type="button" class="btn btn-success"> Cerrar Sesion</button></a>
 </div>
   
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <a href=""><h3>Sobre Mi</h3></a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+	<!--boton para aumentar una maquina mas-->
+      <button type=button onclick="location.href='formularioRegistroMaquina.html'" >Anadir maquina</button>
     </div>
-    <div class="col-sm-4">
-      <a href=""><h3>Ajustes</h3></a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <a href=""><h3>Editar Perfil</h3></a>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+    
   </div>
 
 </div>
 
 </body>
 </html>
+

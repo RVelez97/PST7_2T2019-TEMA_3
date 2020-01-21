@@ -6,7 +6,7 @@
  $form_pass = $_POST['password'];
 $form_correo=$_POST['email'];
  $form_name = $_POST['name'];
-$form_adress=$_POST['adress'];
+$form_adress=$_POST['dir'];
  
  $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
 
