@@ -3,6 +3,8 @@
 
 <?php
 session_start();
+
+
 include 'conexion.php';
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -90,7 +92,7 @@ if($resultadoProd->fetch_row()!=null){
 echo "<div>
 <h1>Maquina $listadoCods[$i]</h1>
 <table>
-<tr><td>Codigo</td><td>Producto</td><td>Precio</td><td>Estado</td></tr>
+<tr><td>Codigo</td><td>Producto</td><td>Precio</td><td>Estado</td><td></td></tr>
 </table>
 </div>";
 mysqli_data_seek($resultadoProd,0);
@@ -99,9 +101,24 @@ $cod=$filasProd[0];
 $nom=$filasProd[2];
 $pre=$filasProd[6];
 $est=$filasProd[7];
+if($filasProd[8]=="si"){
+if($est=="cad"){
+$ref="location.href='borrarProd.php'";
+$s1="eliminar";
+$s2="borrarProd.php";
+$s3="post";
+$s4="submit";
 echo "<div><table>
-<tr><td>$cod</td><td>$nom</td><td>$ $pre</td><td>$est</td></tr>
-";
+<tr><td>$cod</td><td>$nom</td><td>$ $pre</td><td>$est</td><td>
+<form  action='$s2' method='$s3'>
+<button type= '$s4' onclick='$ref' name='$s1' value='$cod'>Eliminar</button></form>
+
+</td></tr>";
+}else{
+echo "<div><table>
+<tr><td>$cod</td><td>$nom</td><td>$ $pre</td><td>$est</td><td></td></tr>";
+}
+}
 }
 ?>
 </table></div>
@@ -147,4 +164,5 @@ echo "<div>
 
 </body>
 </html>
+
 
