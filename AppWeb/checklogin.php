@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {     }
 	
  
   $row = $result->fetch_array(MYSQLI_ASSOC);
- // if (password_verify($password, $row['password'])) { 
+ // condicion que evalua si las credenciales son correctas 
 if ($password==$row['contrasenia']) { 
 
  

@@ -37,13 +37,14 @@ $codigo=$codPropietario. sprintf("%03d",$count2);
 $consulta3="select * from $tbl_name where correo = '$usuario'";
 $resultado3=$conexion->query($consulta3);
 $filas2=$resultado3->fetch_array(MYSQLI_ASSOC);
+//si no hay maquinas solo se anade el codigo
 if($filas2['maquinas']==""){
 $codigosMaquinas=$codigo;
-}else{
+}else{//caso contrario se va anadiendo con una coma previo al codigo
 $codigosMaquinas=$filas2['maquinas'].","."$codigo";
 }
 echo $codigosMaquinas;
-//se cargan todos los campos
+//se cargan todos los campos en la tabla
 
 $cargar = "insert into $tblMaq values ('$codigo','$codPropietario',$lat,$lng)";
 $actualizarCodMaquinas="update $tbl_name set maquinas='$codigosMaquinas' where correo ='$usuario'";

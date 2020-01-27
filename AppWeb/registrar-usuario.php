@@ -41,7 +41,7 @@ $count2=mysqli_num_rows($resultado2)+1;
 $codigo=$cod_inic. sprintf("%03d",$count2);
 
 
-
+//se cargan los nuevos datos
 $cargar = "INSERT INTO usuarios (codigo,nombre, correo,contrasenia,direccion,maquinas) VALUES        ('$codigo','$form_name','$form_correo','$form_pass','$form_adress','')";
  if ($conexion->query($cargar) === TRUE) {
  header('Location: index.html');
