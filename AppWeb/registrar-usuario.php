@@ -6,7 +6,7 @@
  $form_pass = $_POST['password'];
 $form_correo=$_POST['email'];
  $form_name = $_POST['name'];
-$form_adress=$_POST['dir'];
+$form_adress=$_POST['adress'];
  
  $conexion = new mysqli($host_db, $user_db, $pass_db, $db_name);
 
@@ -16,7 +16,7 @@ $form_adress=$_POST['dir'];
 
 //se intenta buscar si ya existe un usuario registrado con ese correo
  $buscarUsuario = "SELECT * FROM $tbl_name
- WHERE correo = '$_POST[email]' ";
+ WHERE correo = '$form_correo' ";
 
  $result = $conexion->query($buscarUsuario);
 //se hace el conteo de las filas donde aparece
