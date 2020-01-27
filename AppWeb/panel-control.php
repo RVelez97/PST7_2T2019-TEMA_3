@@ -82,6 +82,7 @@ $consultaProd="select * from productos where codMaquina = '$listadoCods[$i]'";
 
 $resultadoProd=$conexion->query($consultaProd);
 
+
 $flag=$resultadoProd;
 
 
@@ -92,6 +93,7 @@ echo "<div>
 <tr><td>Codigo</td><td>Producto</td><td>Precio</td><td>Estado</td></tr>
 </table>
 </div>";
+mysqli_data_seek($resultadoProd,0);
 while($filasProd=$resultadoProd->fetch_row()){
 $cod=$filasProd[0];
 $nom=$filasProd[2];
